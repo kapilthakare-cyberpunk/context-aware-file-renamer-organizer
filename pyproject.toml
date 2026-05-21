@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-aware-file-renamer"
+version = "0.1.0"
+description = "AI-powered floating GUI app that watches folders and renames/reorganizes files using LLMs"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "watchdog==4.0.1",
+    "ollama==0.2.1",
+    "groq==0.9.0",
+    "mistralai==1.0.3",
+    "customtkinter==5.2.2",
+    "python-dotenv==1.0.1",
+    "pydantic==2.8.2",
+    "rich==13.7.1",
+    "click==8.1.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.2.0",
+    "pytest-asyncio==0.23.7",
+    "ruff==0.4.4",
+    "mypy==1.10.0",
+]
+
+[project.scripts]
+renamer = "renamer.__main__:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true

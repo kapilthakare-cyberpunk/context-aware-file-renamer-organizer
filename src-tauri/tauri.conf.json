@@ -1,0 +1,24 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "identifier": "com.fileorganizer.desktop",
+  "productName": "File Organizer",
+  "version": "0.1.0",
+  "build": {
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../frontend/dist"
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "File Organizer",
+        "width": 600,
+        "height": 500,
+        "resizable": true
+      }
+    ]
+  }
+}
